@@ -1,0 +1,38 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:GeneralMed2._0.Styles">
+    
+    <!-- Font colors -->
+    
+    <!-- Common text color -->
+    <Color x:Key="ForegroundMain">#4a4a4a</Color>
+    <SolidColorBrush x:Key="ForegroundMainBrush" Color="{StaticResource ForegroundMain}"></SolidColorBrush>
+
+    <!-- Color for text box placeholder font -->
+    <Color x:Key="ForegroundLight">#d1d1d1</Color>
+    <SolidColorBrush x:Key="ForegroundLightBrush" Color="{StaticResource ForegroundLight}"></SolidColorBrush>
+
+
+    <!-- Additional control colors -->
+    
+    <!-- Underline for textblocks -->
+    <Color x:Key="GreenUnderline">#6bff4a</Color>
+    <SolidColorBrush x:Key="GreenUnderlineBrush" Color="{StaticResource GreenUnderline}"></SolidColorBrush>
+    
+    <!-- Grey underline for textboxes -->
+    <Color x:Key="GrayUnderline">#bdbdbd</Color>
+    <SolidColorBrush x:Key="GrayUnderlineBrush" Color="{StaticResource GrayUnderline}"></SolidColorBrush>
+    
+    <!-- Icon Light Green Color -->
+    <Color x:Key="IconHoverGreen">#70ff8f</Color>
+    <SolidColorBrush x:Key="IconHoverGreenBrush" Color="{StaticResource IconHoverGreen}"></SolidColorBrush>
+
+    <!-- Light grey background for icon buttons -->
+    <Color x:Key="IconBackgroundGray">#f0f0f0</Color>
+    <SolidColorBrush x:Key="IconBackgroundGrayBrush" Color="{StaticResource IconBackgroundGray}"></SolidColorBrush>
+    
+    <!-- Light Blue background for the weather control -->
+    <Color x:Key="WeatherLightBlueBackground">#ade3ff</Color>
+    <SolidColorBrush x:Key="WeatherLightBlueBackgroundBrush" Color="{StaticResource WeatherLightBlueBackground}"></SolidColorBrush>
+
+</ResourceDictionary>

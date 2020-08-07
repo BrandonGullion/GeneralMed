@@ -1,0 +1,96 @@
+﻿<Window x:Class="GeneralMed2._0.Windows.UpdatePatientWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GeneralMed2._0"
+        xmlns:VM="clr-namespace:GeneralMed2._0.ViewModels.PatientListViewModel"
+        mc:Ignorable="d"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        Background="Transparent"
+        Title="UpdatePatientWindow" Height="450" Width="400">
+
+    <Grid>
+        <Border Padding="15"
+            CornerRadius="20"
+            Background="White"
+            BorderThickness="1.5"
+            BorderBrush="{StaticResource ForegroundLightBrush}">
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Border Grid.Row="0"
+                        Margin="0 -15 0 0"
+                        x:Name="WindowHeader"
+                        MouseDown="WindowHeader_MouseDown">
+
+                    <Grid>
+                        <TextBlock Text="Update Patient"
+                                   Style="{StaticResource BaseTextBlock}"
+                                   FontSize="20"/>
+
+
+                        <Button Content="[ X ]"
+                                Style="{StaticResource RegularButton}"
+                                HorizontalAlignment="Right"
+                                x:Name="CloseButton"
+                                FontSize="20"
+                                Grid.Row="0"
+                                Click="CloseButton_Click"/>
+                    </Grid>
+                </Border>
+
+                <StackPanel Grid.Row="1">
+                    <TextBlock Text="First Name:"
+                               Style="{StaticResource BaseTextBlock}"
+                               FontSize="20"/>
+
+                    <TextBox Template="{StaticResource UnderlineTextBox}"
+                             x:Name="FirstNameTextBox"
+                             FontSize="20"/>
+
+                    <TextBlock Text="Last Name:"
+                               Style="{StaticResource BaseTextBlock}"
+                               FontSize="20"/>
+
+                    <TextBox Template="{StaticResource UnderlineTextBox}"
+                             x:Name="LastNameTextBox"
+                             FontSize="20"/>
+
+                    <TextBlock Text="DOB:"
+                               Style="{StaticResource BaseTextBlock}"
+                               FontSize="20"/>
+
+                    <TextBox Template="{StaticResource UnderlineTextBox}"
+                             x:Name="DOBTextBox"
+                             FontSize="20"/>
+
+                    <TextBlock Text="Address/Room #:"
+                               Style="{StaticResource BaseTextBlock}"
+                               FontSize="20"/>
+
+                    <TextBox Template="{StaticResource UnderlineTextBox}"
+                             x:Name="AddressTextBox"
+                             FontSize="20"/>
+
+                    <Button Style="{StaticResource RegularButton}"
+                            x:Name="UpdatePatientButton"
+                            Click="UpdatePatientButton_Click"
+                            FontSize="20"
+                            Content="Update"
+                            HorizontalAlignment="Right"
+                            Margin="0 50 10 10"
+                            Foreground="{StaticResource ForegroundMainBrush}"/>
+
+                </StackPanel>
+                
+            </Grid>
+        </Border>
+    </Grid>
+
+</Window>

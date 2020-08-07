@@ -1,0 +1,19 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:GeneralMed2._0.Styles">
+
+    <Style x:Key="HoverItem" TargetType="{x:Type Border}">
+
+        <Setter Property="CornerRadius" Value="5"/>
+        <Setter Property="Margin" Value="5"/>
+        
+
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="{StaticResource IconHoverGreenBrush}"/>
+            </Trigger>
+        </Style.Triggers>
+
+    </Style>
+    
+</ResourceDictionary>

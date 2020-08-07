@@ -1,0 +1,349 @@
+﻿        <ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:GeneralMed2._0.Styles">
+
+    
+    <!-- This will be the general look of a button -->
+    <!-- Setting the general properties of the button -->
+    <Style TargetType="{x:Type Button}" x:Key="RegularButton" BasedOn="{StaticResource BaseTextFont}">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Padding" Value="5"/>
+        <Setter Property="Margin" Value="5"/>
+        <Setter Property="FontFamily" Value="{StaticResource LatoRegular}"/>
+
+        <!-- Setting the actual style of the button -->
+        <Setter Property="Template">
+            <Setter.Value>
+                <!-- There used to be a content control here, but it was removed to allow for just text to be inside -->
+                <ControlTemplate TargetType="{x:Type ButtonBase}">
+                    <!-- The border was renamed to allow for binding later for the animations -->
+                    <Border x:Name="border"
+                            Background="{TemplateBinding Background}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            CornerRadius="5">
+                        <Grid>
+                            <TextBlock x:Name="textblock"
+                                       Text="{TemplateBinding Content}"
+                                       FontFamily="{TemplateBinding FontFamily}"
+                                       Foreground="{TemplateBinding Foreground}"
+                                       FontSize="{TemplateBinding FontSize}"
+                                       HorizontalAlignment="Center"
+                                       VerticalAlignment="Center"
+                                       Margin="{TemplateBinding Padding}">
+                            </TextBlock>
+                        </Grid>
+                    </Border>
+                    
+                    <!-- Storboard animations -->
+
+                    
+                    <!-- Mouse enter to cause hover effects -->
+                    <ControlTemplate.Triggers>
+                        <EventTrigger RoutedEvent="MouseEnter">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <ColorAnimation To="{StaticResource IconHoverGreen}" Duration="0:0:0.2" Storyboard.TargetName="border" Storyboard.TargetProperty="Background.Color"/>
+                                </Storyboard> 
+                            </BeginStoryboard>
+                        </EventTrigger>
+
+
+                        <!-- Mouse leave animation to allow for the changes of the color -->
+                        <EventTrigger RoutedEvent="MouseLeave">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <ColorAnimation To="Transparent" Duration="0:0:0.2" Storyboard.TargetName="border" Storyboard.TargetProperty="Background.Color"/>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                        
+                    </ControlTemplate.Triggers>
+                    
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- Icon Button -->
+    <Style TargetType="{x:Type Button}" x:Key="IconButton" BasedOn="{StaticResource BaseTextFont}">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Padding" Value="5"/>
+        <Setter Property="Margin" Value="5"/>
+        <Setter Property="FontFamily" Value="{StaticResource LatoRegular}"/>
+
+        <!-- Setting the actual style of the button -->
+        <Setter Property="Template">
+            <Setter.Value>
+                <!-- There used to be a content control here, but it was removed to allow for just text to be inside -->
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <!-- The border was renamed to allow for binding later for the animations -->
+                    <Border x:Name="border"
+                            Background="{TemplateBinding Background}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            CornerRadius="5">
+                        <Grid>
+                            <TextBlock x:Name="textblock"
+                                       Text="{TemplateBinding Content}"
+                                       FontFamily="{TemplateBinding FontFamily}"
+                                       Foreground="{TemplateBinding Foreground}"
+                                       FontSize="{TemplateBinding FontSize}"
+                                       HorizontalAlignment="Center"
+                                       VerticalAlignment="Center"
+                                       Margin="{TemplateBinding Padding}">
+                            </TextBlock>
+                        </Grid>
+                    </Border>
+
+                    <!-- Storboard animations -->
+
+
+                    <!-- Mouse enter to cause hover effects -->
+                    <ControlTemplate.Triggers>
+                        <EventTrigger RoutedEvent="MouseEnter">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <ColorAnimation To="{StaticResource IconHoverGreen}" 
+                                                    Duration="0:0:0.2" 
+                                                    Storyboard.TargetName="textblock" 
+                                                    Storyboard.TargetProperty="Foreground.Color"/>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+
+
+                        <!-- Mouse leave animation to allow for the changes of the color -->
+                        <EventTrigger RoutedEvent="MouseLeave">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <ColorAnimation To="{StaticResource ForegroundLight}" 
+                                                    Duration="0:0:0.2" 
+                                                    Storyboard.TargetName="textblock" 
+                                                    Storyboard.TargetProperty="Foreground.Color"/>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+
+                    </ControlTemplate.Triggers>
+
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+            
+    <!-- IconForegroundMain Button -->
+    <Style TargetType="{x:Type Button}" x:Key="IconButtonForegroundMain" BasedOn="{StaticResource BaseTextFont}">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Padding" Value="5"/>
+        <Setter Property="Margin" Value="5"/>
+        <Setter Property="FontFamily" Value="{StaticResource LatoRegular}"/>
+
+        <!-- Setting the actual style of the button -->
+        <Setter Property="Template">
+            <Setter.Value>
+                <!-- There used to be a content control here, but it was removed to allow for just text to be inside -->
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <!-- The border was renamed to allow for binding later for the animations -->
+                    <Border x:Name="border"
+                            Background="{TemplateBinding Background}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            CornerRadius="5">
+                        <Grid>
+                            <TextBlock x:Name="textblock"
+                                       Text="{TemplateBinding Content}"
+                                       FontFamily="{TemplateBinding FontFamily}"
+                                       Foreground="{TemplateBinding Foreground}"
+                                       FontSize="{TemplateBinding FontSize}"
+                                       HorizontalAlignment="Center"
+                                       VerticalAlignment="Center"
+                                       Margin="{TemplateBinding Padding}">
+                            </TextBlock>
+                        </Grid>
+                    </Border>
+
+                    <!-- Storboard animations -->
+
+                    <!-- Mouse enter to cause hover effects -->
+                    <ControlTemplate.Triggers>
+                        <EventTrigger RoutedEvent="MouseEnter">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <ColorAnimation To="{StaticResource IconHoverGreen}" 
+                                                    Duration="0:0:0.2" 
+                                                    Storyboard.TargetName="textblock" 
+                                                    Storyboard.TargetProperty="Foreground.Color"/>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+
+                        <!-- Mouse leave animation to allow for the changes of the color -->
+                        <EventTrigger RoutedEvent="MouseLeave">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <ColorAnimation To="{StaticResource ForegroundMain}" 
+                                                    Duration="0:0:0.2" 
+                                                    Storyboard.TargetName="textblock" 
+                                                    Storyboard.TargetProperty="Foreground.Color">
+                                    </ColorAnimation>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+            
+    <!-- IconWhite Button -->
+    <Style TargetType="{x:Type Button}" x:Key="IconButtonWhite" BasedOn="{StaticResource BaseTextFont}">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Padding" Value="5"/>
+        <Setter Property="Margin" Value="5"/>
+        <Setter Property="FontFamily" Value="{StaticResource LatoRegular}"/>
+
+        <!-- Setting the actual style of the button -->
+        <Setter Property="Template">
+            <Setter.Value>
+                <!-- There used to be a content control here, but it was removed to allow for just text to be inside -->
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <!-- The border was renamed to allow for binding later for the animations -->
+                    <Border x:Name="border"
+                            Background="{TemplateBinding Background}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            CornerRadius="5">
+                        <Grid>
+                            <TextBlock x:Name="textblock"
+                                       Text="{TemplateBinding Content}"
+                                       FontFamily="{TemplateBinding FontFamily}"
+                                       Foreground="{TemplateBinding Foreground}"
+                                       FontSize="{TemplateBinding FontSize}"
+                                       HorizontalAlignment="Center"
+                                       VerticalAlignment="Center"
+                                       Margin="{TemplateBinding Padding}">
+                            </TextBlock>
+                        </Grid>
+                    </Border>
+
+                    <!-- Storboard animations -->
+
+
+                    <!-- Mouse enter to cause hover effects -->
+                    <ControlTemplate.Triggers>
+                        <EventTrigger RoutedEvent="MouseEnter">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <ColorAnimation To="{StaticResource IconHoverGreen}" 
+                                                    Duration="0:0:0.2" 
+                                                    Storyboard.TargetName="textblock" 
+                                                    Storyboard.TargetProperty="Foreground.Color"/>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+
+
+                        <!-- Mouse leave animation to allow for the changes of the color -->
+                        <EventTrigger RoutedEvent="MouseLeave">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <ColorAnimation To="White" 
+                                                    Duration="0:0:0.2" 
+                                                    Storyboard.TargetName="textblock" 
+                                                    Storyboard.TargetProperty="Foreground.Color"/>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+
+                    </ControlTemplate.Triggers>
+
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+
+    <!-- Button with text and icon -->
+    <Style TargetType="{x:Type Button}" x:Key="IconTextButton" BasedOn="{StaticResource BaseTextFont}">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Padding" Value="5"/>
+        <Setter Property="Margin" Value="5"/>
+        <Setter Property="FontFamily" Value="{StaticResource LatoRegular}"/>
+
+        <!-- Setting the actual style of the button -->
+        <Setter Property="Template">
+            <Setter.Value>
+                <!-- There used to be a content control here, but it was removed to allow for just text to be inside -->
+                <ControlTemplate TargetType="{x:Type ButtonBase}">
+                    <!-- The border was renamed to allow for binding later for the animations -->
+                    <Border x:Name="border"
+                            Background="{TemplateBinding Background}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            CornerRadius="5"
+                            Padding="5">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            
+                            <TextBlock x:Name="textblock"
+                                       Text="{TemplateBinding Content}"
+                                       FontFamily="{TemplateBinding FontFamily}"
+                                       Foreground="{TemplateBinding Foreground}"
+                                       FontSize="{TemplateBinding FontSize}"
+                                       HorizontalAlignment="Center"
+                                       VerticalAlignment="Center"
+                                       Grid.Column="0"
+                                       Margin="{TemplateBinding Padding}">
+                            </TextBlock>
+
+                            <TextBlock FontFamily="{StaticResource FontAwesome}"
+                                       Foreground="{TemplateBinding Foreground}"
+                                       Text="{TemplateBinding Tag}"
+                                       Grid.Column="1"
+                                       FontSize="{TemplateBinding FontSize}"
+                                       VerticalAlignment="Center"
+                                       HorizontalAlignment="Center">
+                            </TextBlock>
+                                       
+                        </Grid>
+                    </Border>
+                    
+                    <!-- Storboard animations -->
+
+                    <!-- Mouse enter to cause hover effects -->
+                    <ControlTemplate.Triggers>
+                        <EventTrigger RoutedEvent="MouseEnter">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <ColorAnimation To="{StaticResource IconHoverGreen}" Duration="0:0:0.2" Storyboard.TargetName="border" Storyboard.TargetProperty="Background.Color"/>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+
+                        <!-- Mouse leave animation to allow for the changes of the color -->
+                        <EventTrigger RoutedEvent="MouseLeave">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <ColorAnimation To="Transparent" Duration="0:0:0.2" Storyboard.TargetName="border" Storyboard.TargetProperty="Background.Color"/>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+
+</ResourceDictionary>

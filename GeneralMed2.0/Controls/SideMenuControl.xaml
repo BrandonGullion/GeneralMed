@@ -1,0 +1,208 @@
+﻿<UserControl x:Class="GeneralMed2._0.Controls.SideMenuControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local2="clr-namespace:GeneralMed2._0"
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="350">
+
+    <UserControl.Resources>
+        <local2:CentralViewModel x:Key="CentralViewModel"/>
+    </UserControl.Resources>
+    
+    <Grid>
+
+        <Border CornerRadius="10"
+                x:Name="SettingsBox"
+                Visibility="{Binding SettingVisibility}"
+                Padding="10"
+                Margin="0 390 5 0"
+                Height="100"
+                Background="{StaticResource ForegroundLightBrush}"
+                Panel.ZIndex="1">
+
+            <StackPanel DataContext="{StaticResource CentralViewModel}">
+                <Button Content="Add/Remove/Update Drug"
+                        Command="{Binding OpenAddDrugWindowCommand}"
+                        Style="{StaticResource RegularButton}"
+                        HorizontalAlignment="Left"/>
+
+                <Button Content="Add/Remove/Update General Use"
+                        Command="{Binding OpenAddGeneralUseCommand}"
+                        Style="{StaticResource RegularButton}"
+                        HorizontalAlignment="Left"/>
+            </StackPanel>
+        </Border>
+        
+        <Polygon Points="0,0 0.5,0.5 1,0"  
+                 Fill="{StaticResource ForegroundLightBrush}"  
+                 Width="30"  
+                 Height="15"
+                 Margin="0 500 200 0"
+                 Stretch="Fill"  
+                 StrokeThickness="2"
+                 Panel.ZIndex="1"
+                 x:Name="SettingTriangle"
+                 Visibility="{Binding SettingVisibility}"/>  
+        
+        <Grid Background="White">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <Border Grid.Row="0" 
+                Padding="5"
+                BorderThickness="0">
+
+                <StackPanel>
+
+                    <!-- Search Bar text placeholder -->
+                    <TextBlock Text="Search:"
+                           Style="{StaticResource BaseTextBlock}"
+                           FontSize="{StaticResource FontSizeRegular}"/>
+
+                    <!-- Actual search bar -->
+                    <Border>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="200"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+
+                            <TextBox  Grid.Column="0"
+                                      DataContext="{StaticResource CentralViewModel}"
+                                      Text="{Binding SearchText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                      Template="{StaticResource UnderlineTextBox}"
+                                      x:Name="SearchBarTextBox"
+                                      Tag="Last Name, First Name"
+                                      Background="Transparent" 
+                                      Foreground="{StaticResource ForegroundMainBrush}"
+                                      FontSize="{StaticResource FontSizeRegular}"
+                                      Margin="5 -5 0 0"
+                                      Padding="-1 5 -1 5"/>
+
+                            <Button Grid.Column="1"
+                                    DataContext="{StaticResource CentralViewModel}"
+                                    Command="{Binding SearchPatientCommand, UpdateSourceTrigger=PropertyChanged}"
+                                    Style="{StaticResource IconButton}"
+                                    Content="&#xf061;"
+                                    Foreground="{StaticResource ForegroundLightBrush}"
+                                    FontSize="{StaticResource FontSizeMediumLarge}"
+                                    FontFamily="{StaticResource FontAwesome}"
+                                    HorizontalAlignment="Right"
+                                    VerticalAlignment="Center"
+                                    Background="{StaticResource IconBackgroundGrayBrush}">
+                            </Button>
+
+                        </Grid>
+
+                    </Border>
+
+                    <!-- Patient name placeholder text -->
+                    <TextBlock Style="{StaticResource BaseTextBlock}"
+                               FontSize="{StaticResource FontSizeRegular}"
+                               Text="Patient Name:"
+                               Margin="0 15 0 0 "/>
+
+                    <!-- Horizontal stack panel for name placement -->
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Style="{StaticResource BaseTextBlock}"
+                                   x:Name="LastNameTextBox"
+                                   FontSize="{StaticResource FontSizeRegular}"
+                                   Text="{Binding SelectedPatient.FirstName}"
+                                   Width="90"
+                                   Margin="0 0 5 0"/>
+                        <TextBlock Style="{StaticResource BaseTextBlock}"
+                                   x:Name="CommaTextbox"
+                                   FontSize="{StaticResource FontSizeRegular}"
+                                   Foreground="{StaticResource ForegroundMainBrush}"
+                                   Margin="-5 0 0 0"/>
+                        <TextBlock Style="{StaticResource BaseTextBlock}"
+                                   x:Name="FirstNameTextbox"
+                                   FontSize="{StaticResource FontSizeRegular}"
+                                   Text="{Binding SelectedPatient.FirstName, UpdateSourceTrigger=PropertyChanged}"
+                                   Width="90"
+                                   Margin="0 0 5 0"/>
+                    </StackPanel>
+
+                    <Line X1="0" 
+                          X2="200"
+                          StrokeThickness="3"
+                          HorizontalAlignment="Center"
+                          Style="{StaticResource UnderLine}"/>
+
+                    <!-- Date of birth Field -->
+                    <TextBlock Style="{StaticResource BaseTextBlock}"
+                               FontSize="{StaticResource FontSizeRegular}"
+                               Text="DOB:"/>
+
+                    <!-- Display for DOB -->
+                    <TextBlock Style="{StaticResource BaseTextBlock}"
+                               FontSize="{StaticResource FontSizeMiddle}"
+                               x:Name="DOBTextbox"
+                               Text="{Binding SelectedPatient.DOB, UpdateSourceTrigger=PropertyChanged}"/>
+
+                    <Line X1="0" 
+                          X2="200"
+                          StrokeThickness="3"
+                          HorizontalAlignment="Center"
+                          Style="{StaticResource UnderLine}"/>
+
+                    <!-- Updated Label -->
+                    <TextBlock Style="{StaticResource BaseTextBlock}" 
+                               Text="Updated:"
+                               FontSize="{StaticResource FontSizeRegular}"/>
+
+                    <!-- Updated Text Field  XX This will be bound to server last query date for patient XX -->
+                    <TextBlock Style="{StaticResource BaseTextBlock}" 
+                               x:Name="UpdateTextbox"
+                               Text="{Binding SelectedPatient.LastUpdate, UpdateSourceTrigger=PropertyChanged}"
+                               FontSize="{StaticResource FontSizeMiddle}"/>
+
+
+                    <Line X1="0" 
+                          X2="200"
+                          StrokeThickness="3"
+                          HorizontalAlignment="Center"
+                          Style="{StaticResource UnderLine}"/>
+
+
+                    <!-- Room # or address -->
+                    <TextBlock Style="{StaticResource BaseTextBlock}" 
+                               Text="Room/Address:"
+                               FontSize="{StaticResource FontSizeRegular}"/>
+                    
+                    <TextBlock Style="{StaticResource BaseTextBlock}" 
+                               x:Name="AddressTextbox"
+                               FontSize="{StaticResource FontSizeMiddle}"/>
+
+                    <Line X1="0" 
+                          X2="200"
+                          StrokeThickness="3"
+                          HorizontalAlignment="Center"
+                          Style="{StaticResource UnderLine}"/>
+
+                </StackPanel>
+
+            </Border>
+
+            <!-- Settings icon -->
+            <Border Grid.Row="1">
+                <Button Command="{Binding ToggleSettingVisibilityCommand}"
+                        Style="{StaticResource IconButton}"
+                        Foreground="{StaticResource ForegroundLightBrush}"
+                        FontFamily="{StaticResource FontAwesome}"
+                        FontSize="{StaticResource FontSizeMediumLarge}"
+                        Content="&#xf013;"
+                        Margin="8 0 0 8"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Left">
+                </Button>
+            </Border>
+        </Grid>
+    </Grid>
+</UserControl>

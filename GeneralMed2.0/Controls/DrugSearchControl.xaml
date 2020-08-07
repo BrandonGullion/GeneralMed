@@ -1,0 +1,48 @@
+﻿<UserControl x:Class="GeneralMed2._0.Controls.DrugSearchControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:GeneralMed2._0.Controls"
+             mc:Ignorable="d" 
+             d:DesignHeight="50" d:DesignWidth="400">
+    
+    <!-- The control that will be used to search the database for the required drugs
+    This should only appear once the patient file has been opened -->
+    
+    <!-- Grid for the Top bar components -->
+    <Grid Background="White">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+
+        <!-- Drug Search Stack Panel -->
+        <StackPanel Orientation="Horizontal"
+                                Grid.Column="0">
+            <TextBox Template="{StaticResource DrugSearchTextbox}"
+                                 Tag="Drug Search"
+                                 Width="200"
+                                 FontSize="{StaticResource FontSizeMiddle}"/>
+        </StackPanel>
+
+        <!-- Save Button -->
+        <Button Style="{StaticResource IconTextButton}"
+                            Foreground="{StaticResource ForegroundMainBrush}"
+                            Content="Save"
+                            Tag="&#xf00c;"
+                            Grid.Column="1"
+                            FontSize="{StaticResource FontSizeMiddle}">
+        </Button>
+
+        <Button Style="{StaticResource IconTextButton}"
+                            Tag="&#xf00d;"
+                            Content="Cancel"
+                            Foreground="{StaticResource ForegroundMainBrush}"
+                            Grid.Column="2"
+                            Margin="5"
+                            FontSize="{StaticResource FontSizeMiddle}">
+        </Button>
+    </Grid>
+</UserControl>

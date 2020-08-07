@@ -1,0 +1,72 @@
+﻿<UserControl x:Class="GeneralMed2._0.Controls.DrugListItemControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:GeneralMed2._0"
+             mc:Ignorable="d" 
+             d:DesignHeight="30" d:DesignWidth="600">
+
+    <!-- wrapping everything in a border to allow for clicked event on entire control -->
+    <!-- By adding the d: it causes visual studio just to show the data within this designer
+    and not within the final product -->
+    <Grid Background="White">
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="130"/>
+            <ColumnDefinition Width="79"/>
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Drug Name -->
+        <TextBlock Grid.Column="0"
+                       Style="{StaticResource BaseTextBlock}"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Left"
+                       Text="{Binding DrugName}"/>
+
+        <!-- Drug Strength -->
+
+        <TextBlock Style="{StaticResource BaseTextBlock}"
+                   VerticalAlignment="Center"
+                   Grid.Column="1"
+                   HorizontalAlignment="Left"
+                   Text="{Binding DrugStrength}"/>
+
+        <!-- Drug purpose -->
+        <TextBlock Grid.Column="2"
+                       Style="{StaticResource BaseTextBlock}"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Left"
+                       Text="{Binding GeneralPurpose}"/>
+
+        <!-- Date Added -->
+        <TextBlock Grid.Column="3"
+                       Style="{StaticResource BaseTextBlock}"
+                       HorizontalAlignment="Left"
+                       VerticalAlignment="Center"
+                       Text="{Binding DateAddedToProfile}"/>
+
+
+        <!-- Date Modified -->
+        <TextBlock Grid.Column="4"
+                       Style="{StaticResource BaseTextBlock}"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       Text="{Binding LastUpdate}"/>
+
+        <Border Grid.Row="1"
+                    Background="{StaticResource IconBackgroundGrayBrush}"
+                    Grid.ColumnSpan="5"
+                    CornerRadius="1"
+                    Height="2"/>
+
+    </Grid>
+</UserControl>
