@@ -88,7 +88,6 @@ namespace GeneralMed2._0
 
         #endregion
 
-
         #region Windows
 
         public DeletePatientWindow DeletePatientWindow { get; set; }
@@ -115,6 +114,10 @@ namespace GeneralMed2._0
         public RelayCommand OpenAddDrugWindowCommand { get; set; }
 
         public RelayCommand OpenAddGeneralUseCommand { get; set; }
+
+        public RelayCommand HomeCommand { get; set; }
+        public RelayCommand BackButtonCommand { get; set; }
+
         #endregion
 
 
@@ -143,6 +146,10 @@ namespace GeneralMed2._0
             OpenAddDrugWindowCommand = new RelayCommand(() => OpenAddDrugWindow());
 
             OpenAddGeneralUseCommand = new RelayCommand(() => OpenGeneralUseWindowCommand());
+
+            BackButtonCommand = new RelayCommand(() => Return());
+
+            HomeCommand = new RelayCommand(() => ReturnToDashboard());
 
             #endregion
 
@@ -329,6 +336,16 @@ namespace GeneralMed2._0
         {
             AddGeneralUseWindow instance = new AddGeneralUseWindow();
             instance.ShowDialog();
+        }
+
+        public void Return()
+        {
+            MainWindow.AppWindow.DisplayPageFrame.GoBack();
+        }
+
+        public void ReturnToDashboard()
+        {
+            MainWindow.AppWindow.DisplayPageFrame.Content = new CalendarPage();
         }
 
         #endregion

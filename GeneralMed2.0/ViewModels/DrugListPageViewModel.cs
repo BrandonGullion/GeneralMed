@@ -95,6 +95,10 @@ namespace GeneralMed2._0
 
             ExportCommand = new RelayCommand(() => Export());
 
+            HomeCommand = new RelayCommand(() => ReturnToDashboard());
+
+            BackButtonCommand = new RelayCommand(() => Return());
+
             #endregion
 
             // Create the drug list to bind to the Combobox 
@@ -123,9 +127,10 @@ namespace GeneralMed2._0
         public RelayCommand DeleteSelectedDrugCommand { get; set; }
 
         public RelayCommand ExportCommand { get; set; }
+        public RelayCommand HomeCommand { get; set; }
+        public RelayCommand BackButtonCommand { get; set; }
 
         #endregion
-
 
         #region Methods
 
@@ -184,6 +189,17 @@ namespace GeneralMed2._0
                 MessageBox.Show("You found a bug!!! Please inform app creator!");
             }
         }
+
+        public void Return()
+        {
+            MainWindow.AppWindow.DisplayPageFrame.GoBack();
+        }
+
+        public void ReturnToDashboard()
+        {
+            MainWindow.AppWindow.DisplayPageFrame.Content = new CalendarPage();
+        }
+
         #endregion
 
     }

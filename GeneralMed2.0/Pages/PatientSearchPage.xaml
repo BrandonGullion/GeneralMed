@@ -18,11 +18,29 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <Grid Grid.Row="0">
+            
+        <Button Content="&#xf060;"
+                FontFamily="{StaticResource FontAwesome}"
+                Style="{StaticResource IconButtonForegroundMain}"
+                VerticalAlignment="Center"
+                HorizontalAlignment="Left"
+                FontSize="24"
+                Command="{Binding BackButtonCommand}"/>
+
+        <Button Content="&#xf015;"
+                FontFamily="{StaticResource FontAwesome}"
+                Style="{StaticResource IconButtonForegroundMain}"
+                VerticalAlignment="Center"
+                HorizontalAlignment="Center"
+                FontSize="24"
+                Command="{Binding HomeCommand}"/>
+
+        <Grid Grid.Row="1">
             <!-- Select Patient Button -->
             <Button Style="{StaticResource RegularButton}"
                     Content="Select Patient"
@@ -45,7 +63,7 @@
 
         <!-- Spacer Border -->
         <Border BorderThickness="1"
-                Grid.Row="1">
+                Grid.Row="2">
             <Border.BorderBrush>
                 <LinearGradientBrush StartPoint="1,0" EndPoint="0,1">
                     <GradientStop Color="Transparent" Offset="0.0"/>
@@ -57,7 +75,7 @@
         </Border>
 
         <!-- Patient List View -->
-        <StackPanel Grid.Row="2">
+        <StackPanel Grid.Row="3">
 
             <Grid>
                 <Grid.ColumnDefinitions>
@@ -123,7 +141,7 @@
 
         </StackPanel>
 
-        <Grid Grid.Row="3">
+        <Grid Grid.Row="4">
                 
             <!-- Update Patient Button -->
             <Button x:Name="UpdatePatientButton"
