@@ -7,16 +7,16 @@
              mc:Ignorable="d" 
              d:DesignHeight="30" d:DesignWidth="500">
 
-    <Border Style="{StaticResource HoverItem}">
+    <Border>
         
-        <Grid Margin="-2 5 5 5">
+        <Grid Margin="5 5 5 5">
             <!-- all of the below will be bound to a view model -->
             
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="150"/>
-                <ColumnDefinition Width="150"/>
+                <ColumnDefinition Width="175"/>
+                <ColumnDefinition Width="175"/>
                 <ColumnDefinition Width="100"/>
-                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="130"/>
             </Grid.ColumnDefinitions>
             
             <!-- Last name field -->

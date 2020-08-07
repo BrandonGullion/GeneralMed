@@ -17,7 +17,7 @@
                 x:Name="SettingsBox"
                 Visibility="{Binding SettingVisibility}"
                 Padding="10"
-                Margin="0 390 5 0"
+                Margin="0 440 5 0"
                 Height="100"
                 Background="{StaticResource ForegroundLightBrush}"
                 Panel.ZIndex="1">
@@ -39,7 +39,7 @@
                  Fill="{StaticResource ForegroundLightBrush}"  
                  Width="30"  
                  Height="15"
-                 Margin="0 500 200 0"
+                 Margin="0 550 200 0"
                  Stretch="Fill"  
                  StrokeThickness="2"
                  Panel.ZIndex="1"

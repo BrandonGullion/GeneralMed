@@ -41,15 +41,16 @@
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
-            
-            
-            
 
             <ComboBox Margin="10"
+                      Text="Begin Typing To Select A Drug"
                       Grid.Column="0"
+                      BorderThickness="0 0 0 1"
                       SelectedItem="{Binding SelectedDrugModel, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                       ItemsSource="{Binding DrugList}"
-                      DisplayMemberPath="DrugName"/>
+                      DisplayMemberPath="DrugName"
+                      IsEditable="True">
+            </ComboBox>
 
             <TextBox Grid.Column="1"
                      Template="{StaticResource UnderlineTextBox}"
@@ -72,7 +73,7 @@
                 <ColumnDefinition Width="135"/>
                 <ColumnDefinition Width="80"/>
                 <ColumnDefinition Width="150"/>
-                <ColumnDefinition Width="85"/>
+                <ColumnDefinition Width="110"/>
                 <ColumnDefinition Width="80"/>
             </Grid.ColumnDefinitions>
 

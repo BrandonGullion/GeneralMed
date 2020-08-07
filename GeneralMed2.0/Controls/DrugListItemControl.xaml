@@ -10,13 +10,13 @@
     <!-- wrapping everything in a border to allow for clicked event on entire control -->
     <!-- By adding the d: it causes visual studio just to show the data within this designer
     and not within the final product -->
-    <Grid Background="White">
+    <Grid Background="Transparent">
 
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="130"/>
             <ColumnDefinition Width="79"/>
             <ColumnDefinition Width="150"/>
-            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="110"/>
             <ColumnDefinition Width="Auto"/>
         </Grid.ColumnDefinitions>
 
