@@ -12,9 +12,9 @@ DEBUG;TRACE
 C:\Users\Brandon\source\repos\gorthrax\GeneralMed\GeneralMed2.0\App.xaml
 242115426005
 3264316193
-501946115903
+49-1733059648
 135-883296339
 Controls\AccuWeatherCityListItemControl.xaml;Windows\AddDrugWindow.xaml;Windows\AddGeneralUseWindow.xaml;Windows\DeletePatientWindow.xaml;Windows\InsertPatientWindow.xaml;Windows\CitySearchWindow.xaml;Controls\DrugListControl.xaml;Controls\DrugListItemControl.xaml;Controls\DrugSearchControl.xaml;Controls\PatientListItemControl.xaml;Controls\SideMenuControl.xaml;Controls\WeatherControl.xaml;MainWindow.xaml;Pages\CalendarPage.xaml;Pages\DrugListPage.xaml;Pages\PatientSearchPage.xaml;Styles\BorderStyles.xaml;Styles\Buttons.xaml;Styles\CalendarStyle.xaml;Styles\Colors.xaml;Styles\Font.xaml;Styles\Lines.xaml;Styles\Texts.xaml;Windows\UpdatePatientWindow.xaml;
 
-True
+False
 
