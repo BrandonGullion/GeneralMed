@@ -110,6 +110,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="BasePropertyChanged.cs" />
+    <Compile Include="Class1.cs" />
     <Compile Include="Commands\CitySearchCommand.cs" />
     <Compile Include="Commands\InsertPatientCommand.cs" />
     <Compile Include="Commands\OpenCitySearchCommand.cs" />
